@@ -1,0 +1,83 @@
+---
+
+# **📂 Automação de Renomeação de Arquivos**
+
+Este é um script de automação em Python projetado para organizar arquivos de forma segura. Ele localiza uma pasta específica, cria um backup completo dela e, em seguida, renomeia todos os arquivos na cópia de backup para um formato sequencial e padronizado.
+
+O script é dividido em duas partes principais:
+
+1. **Setup:** Cria uma pasta e arquivos de exemplo para teste.  
+2. **Automação:** Executa o processo de backup e renomeação.
+
+---
+
+## **🚀 Funcionalidades Principais**
+
+* **Setup de Teste:** Cria automaticamente uma pasta Arquivos e cinco arquivos .txt de exemplo na sua Área de Trabalho (OneDrive) para que o script tenha o que processar.  
+* **Backup Seguro:** Antes de qualquer modificação, o script cria uma cópia exata da pasta original (Arquivos) para uma nova pasta (arquivos\_renomeados).  
+* **Renomeação em Lote:** Percorre todos os arquivos na pasta de *cópia* e os renomeia seguindo um padrão sequencial (ex: documento\_01.txt, documento\_02.txt), mantendo a extensão original.  
+* **Preservação de Originais:** A pasta Arquivos original permanece 100% intacta, garantindo a segurança dos seus dados.  
+* **Limpeza Automática:** Se uma pasta arquivos\_renomeados de uma execução anterior já existir, ela é removida e recriada para garantir um processo limpo.
+
+---
+
+## **📋 Requisitos**
+
+* Python 3.x  
+* Nenhuma biblioteca externa é necessária. O script utiliza apenas os módulos padrão os e shutil.
+
+---
+
+## **▶️ Como Usar**
+
+1. Salve o código em um único arquivo (ex: automacao.py).  
+2. Abra seu terminal ou prompt de comando.  
+3. Navegue até o diretório onde você salvou o arquivo.  
+4. Execute o script:  
+5. Bash
+
+python automacao.py
+
+6.   
+7.   
+8. O script cuidará do setup (criação dos arquivos de teste) e da automação (cópia e renomeação) em uma única execução.
+
+## **⚙️ O Fluxo da Automação**
+
+Ao ser executado, o script segue estes passos:
+
+1. **Setup:** Cria a pasta .../OneDrive/Área de Trabalho/Arquivos.  
+2. **População:** Preenche a pasta Arquivos com 5 arquivos de exemplo (relatorio.txt, tarefas.txt, etc.).  
+3. **Verificação:** Confirma se a pasta Arquivos existe (o que ela fará, graças ao setup).  
+4. **Backup:** Copia toda a estrutura de ArquIVOS para uma nova pasta chamada .../OneDrive/Área de Trabalho/arquivos\_renomeados.  
+5. **Renomeação:**  
+   * Lista os arquivos da pasta arquivos\_renomeados (em ordem alfabética).  
+   * Renomeia cada arquivo para documento\_XX.extensao (ex: documento\_01.txt, documento\_02.txt).  
+6. **Conclusão:** Imprime um resumo do processo, mostrando o total de arquivos processados e os caminhos das pastas.
+
+---
+
+## **📁 Estrutura de Pastas (Resultado)**
+
+Após a execução do script, sua Área de Trabalho ficará assim:
+
+\[Sua Área de Trabalho \- OneDrive\]  
+|  
+\+-- Arquivos/               (Pasta original, criada pelo setup e INTACTA)  
+|   |-- dados.txt  
+|   |-- notas.txt  
+|   |-- planilha.txt  
+|   |-- relatorio.txt  
+|   |-- tarefas.txt  
+|  
+\+-- arquivos\_renomeados/    (Pasta de cópia, com arquivos processados)  
+    |-- documento\_01.txt    (antigo dados.txt)  
+    |-- documento\_02.txt    (antigo notas.txt)  
+    |-- documento\_03.txt    (antigo planilha.txt)  
+    |-- documento\_04.txt    (antigo relatorio.txt)  
+    |-- documento\_05.txt    (antigo tarefas.txt)
+
+---
+
+Precisa de ajuda para adicionar mais funcionalidades, como agrupar os arquivos por tipo (ex: .txt, .pdf) antes de renomear?
+
